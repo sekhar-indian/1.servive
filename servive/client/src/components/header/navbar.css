@@ -1,0 +1,34 @@
+.navbar-container{
+    margin-left: 100px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.navbar-heading{
+    color: white;
+    font-size:larger;
+    font-family: roboto;
+    font-size: 30px;
+}
+.a{
+    color:white;
+    text-decoration:none;
+    font-size: 20px;
+    font-family: roboto;
+}
+.navbar-img{
+    height: 40px;
+}
+.navbar-img-container{
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 13px;
+}
+.nav-buttons{
+    font-family: roboto;
+    font-size: 20px;
+    border-radius: 15px;
+    border:solid white;
+    margin: 5px;
+}

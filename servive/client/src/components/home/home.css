@@ -1,0 +1,19 @@
+.home-container{
+    margin-top: 8%;
+    display:flex;
+    justify-content:space-around;
+}
+.home-img{
+  height: 400px;
+}
+.home-textcontainer{
+    color: white;
+    font-family: roboto;
+    font-size: 30px;
+
+}
+.home-textcontainer-button{
+    font-size: 15px;
+    border-radius: 10px;
+    border: solid white;
+}
