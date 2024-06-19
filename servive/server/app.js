@@ -2,29 +2,33 @@ const express=require('express');
 const app=express();
 const user=require('./routers/user');
 const sequelize = require('./models/products');
-const athontecationData=require('./models/antnaticationdata')
+const athontecationData=require('./models/antnaticationdata');
+const cors=require('cors');
 
-
-app.use(user)
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(cors())
+app.use(user)
 
 
+
+// Syncing authentication data
 athontecationData.sync()
-.then(res=>{
-    console.log('athontecationData ok')
-})
-.catch(res=>{
-    console.log('athontecationData not ok')
-})
-sequelize.sync()
-.then(r=>{
-    console.log('ok')
-})
-.catch(e=>{
-    res.send('no')
-}) 
+    .then(() => {
+        console.log('athontecationData ok');
+    })
+    .catch(err => {
+        console.error('athontecationData not ok:', err);
+    });
 
-app.listen(3000,(res)=>{
- console.log(res)
-})
+// Syncing sequelize
+sequelize.sync()
+    .then(() => {
+        console.log('ok');
+    })
+    .catch(err => {
+        console.error('sequelize sync error:', err);
+    });
+
+app.listen(4000, () => {
+    console.log('Server is running on port 3000');
+});

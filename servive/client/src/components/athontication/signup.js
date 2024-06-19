@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import './signup.css';
-import axios from 'axios'
+import axios from 'axios';
 class Signup extends Component{
-
+  
     submitData=(event)=>{
         event.preventDefault();
         let name=event.target.name.value;
@@ -14,14 +14,12 @@ class Signup extends Component{
             password:password
         }
         console.log(data)
-        axios.post('http://localhost:3000/Signup',data)
+        axios.post('http://localhost:4000/signup',data)
             .then(response => {
-                console.log('Success:');
-                // Handle success, maybe redirect to login or show a success message
+
             })
             .catch(error => {
-                console.error('Error:', error);
-                // Handle error, show an error message to the user
+           
             });
         
     }
@@ -36,7 +34,7 @@ render(){
                     <label className='loginpage-lable' >Name</label><br></br>
                     <input className='loginpage-input' name='name' type='text'></input><br></br>
                     <label className='loginpage-lable'>Email</label><br></br>
-                    <input className='loginpage-input' name='email' type='text'></input><br></br>
+                    <input className='loginpage-input' name='email' type='email'></input><br></br>
                     <label className='loginpage-lable'>Password</label><br></br>
                     <input className='loginpage-input' name='password' type='password'></input><br></br>
                     <button className='loginpage-submitbutton' type='submit'>Submit</button><br></br>

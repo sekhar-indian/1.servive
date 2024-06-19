@@ -6,14 +6,16 @@ const athontecationData=sequelize.define('athontecationData',{
         type:Sequelize.INTEGER,
         autoIncrement:true,
         allowNull:false,
-        primaryKey:true
+        primaryKey:true,
+        unique:true
     },
     name:{
         type:Sequelize.STRING,
         allowNull:false
     },email:{
         type:Sequelize.STRING,
-        allowNull:false
+        allowNull:false,
+        unique:true
 
     },
     password:{
